@@ -316,7 +316,8 @@ jobs:
       - set-jekyll-basename
       - run:
           name: Deploy to S3 if tests pass and branch is Master
-          command: aws s3 sync generated-site/_site/${JEKYLL_BASENAME} s3://circle-production-static-site/${JEKYLL_BASENAME}/ --delete
+          #command: aws s3 sync generated-site/_site/${JEKYLL_BASENAME} s3://circle-production-static-site/${JEKYLL_BASENAME}/ --delete
+          command: aws s3 sync generated-site/_site/docs s3://circle-production-static-site/docs/ --delete
 
   deploy-preview:
     docker:
